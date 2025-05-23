@@ -1,0 +1,127 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <meta name="description" content="Salary Calculator" />
+        <link rel="stylesheet" type="text/css" href="./styles.css" />
+        <link rel="icon" href="favicon.ico" />
+        <link rel="apple-touch-icon" href="apple.ico" />
+        <meta name="mobile-web-app-capable" content="yes" />
+        <meta name="apple-mobile-web-app-capable" content="yes" />
+        <meta
+            name="apple-mobile-web-app-status-bar-style"
+            id="statusBarStyle"
+            content="white"
+        />
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+        <link
+            href="https://fonts.googleapis.com/css2?family=Josefin+Slab:wght@400;700&family=Quicksand:wght@300;400;700&display=swap"
+            rel="stylesheet"
+        />
+        <title>Klaipeda Salary Calculator</title>
+    </head>
+    <body>
+        <header>
+            <h1 class="title">Klaipeda Calculator</h1>
+            <img
+                src="./logo.ico"
+                alt="Theme Toggle"
+                id="themeToggle"
+                onclick="toggleTheme()"
+            />
+        </header>
+
+        <main>
+            <div id="calculatorContainer" class="container">
+                <input
+                    type="number"
+                    id="sum"
+                    class="styledInput"
+                    placeholder="Total amount"
+                    required
+                    min="0"
+                />
+                <input
+                    type="number"
+                    id="additionalValue"
+                    class="styledInput"
+                    placeholder="Tips or bonus"
+                    required
+                    min="0"
+                />
+                <input
+                    type="number"
+                    id="hours"
+                    class="styledInput"
+                    placeholder="Hours worked"
+                    required
+                    min="0"
+                />
+                <button
+                    class="btn-magic"
+                    id="rippleButton"
+                    type="button"
+                    onclick="calculateSalary()"
+                >
+                    Calculate
+                </button>
+            </div>
+
+            <div id="resultsContainer" class="container">
+                <h2>Recent Calculations</h2>
+                <ul id="resultsList"></ul>
+                <ul id="resultsList2"></ul>
+                <ul id="resultsList3"></ul>
+            </div>
+
+            <div id="hourlySalaryResultContainer" class="container">
+                <p id="hourlySalaryResult1"></p>
+                <p id="hourlySalaryResult2"></p>
+            </div>
+
+            <div id="chartContainer" class="container">
+                <canvas id="myChart" width="400" height="200"></canvas>
+            </div>
+
+            <div class="container-quit container">
+                <div class="elapsed-time" id="elapsedTime">Loading...</div>
+            </div>
+
+            <div class="container-energy container" id="energyContainer">
+                <div class="energy-section">
+                    <h3>Pros</h3>
+                    <ul>
+                        <li>Kindness</li>
+                        <li>Compassion</li>
+                        <li>Responsiveness</li>
+                        <li>Charity</li>
+                        <li>Innovation</li>
+                        <li>Creative Thinking</li>
+                    </ul>
+                </div>
+                <div class="energy-section">
+                    <h3>Cons</h3>
+                    <ul>
+                        <li>Need to Suffer</li>
+                        <li>Sacrificial Relationships</li>
+                        <li>Resentfulness</li>
+                        <li>"Nobody Loves Me"</li>
+                        <li>Depression</li>
+                        <li>Negative Thinking</li>
+                    </ul>
+                </div>
+            </div>
+        </main>
+
+        <footer>
+            <p class="copyright">Copyright @ BarberScript 2025</p>
+        </footer>
+
+        <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+        <script src="./script.js"></script>
+        <script src="supabase.js"></script>
+    </body>
+</html>

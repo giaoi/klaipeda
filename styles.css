@@ -1,0 +1,262 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Quicksand", sans-serif;
+  overflow-x: hidden;
+}
+
+:root {
+  --background-light: linear-gradient(135deg, #F9FAFB, #E0F2FE);
+  --background-dark: linear-gradient(135deg, #1F2937, #111827);
+  --text-light: #1F2937;
+  --text-dark: #F9FAFB;
+  --accent-blue: #0284c7;
+  --accent-orange: #F97316;
+  --success: #10B981;
+  --danger: #EF4444;
+}
+
+body {
+  background: var(--background-light);
+  color: var(--text-light);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  min-height: 100vh;
+}
+
+.dark-theme {
+  background: var(--background-dark);
+  color: var(--text-dark);
+}
+
+.dark-theme .container {
+  background: #374151;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+}
+
+.dark-theme .styledInput {
+  background: #4B5563;
+  color: #F9FAFB;
+  border: 1px solid #6B7280;
+}
+
+.dark-theme .btn-magic {
+  background: var(--accent-orange);
+}
+
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem;
+  max-width: 500px;
+  width: 100%;
+}
+
+.title {
+  font-family: "Josefin Slab", serif;
+  font-size: 1.8rem;
+  font-weight: 700;
+}
+
+header img {
+  width: 40px;
+  height: 40px;
+  cursor: pointer;
+  transition: transform 0.3s ease;
+}
+
+header img:hover {
+  transform: scale(1.1);
+}
+
+main {
+  max-width: 500px;
+  width: 100%;
+  padding: 1rem;
+}
+
+.container {
+  background: #FFFFFF;
+  border-radius: 15px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  margin: 1rem 0;
+  padding: 1.5rem;
+  animation: fadeIn 0.5s ease-in;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.styledInput {
+  width: 100%;
+  padding: 0.75rem;
+  margin: 0.5rem 0;
+  border: 1px solid #D1D5DB;
+  border-radius: 8px;
+  font-size: 1rem;
+  transition: border-color 0.3s ease;
+}
+
+.styledInput:focus {
+  outline: none;
+  border-color: var(--accent-blue);
+  box-shadow: 0 0 5px rgba(2, 132, 199, 0.3);
+}
+
+.styledInput[type="number"]::-webkit-inner-spin-button,
+.styledInput[type="number"]::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+}
+
+.btn-magic {
+  width: 100%;
+  padding: 0.75rem;
+  margin: 0.5rem 0;
+  border: none;
+  border-radius: 8px;
+  background: var(--accent-blue);
+  color: #FFFFFF;
+  font-size: 1rem;
+  font-weight: 700;
+  cursor: pointer;
+  transition: transform 0.2s ease, background 0.3s ease;
+}
+
+.btn-magic:hover {
+  transform: scale(1.02);
+  background: #0369A1;
+}
+
+.btn-magic:active {
+  transform: scale(0.98);
+}
+
+.blueunderline {
+  color: var(--accent-blue);
+  font-weight: 700;
+}
+
+.redunderline {
+  color: var(--danger);
+}
+
+ul {
+  list-style-type: none;
+}
+
+#resultsContainer h2 {
+  font-family: "Josefin Slab", serif;
+  font-size: 1.5rem;
+  margin-bottom: 1rem;
+}
+
+#resultsContainer li {
+  margin: 0.5rem 0;
+  padding: 0.5rem;
+  border-radius: 5px;
+  background: #F3F4F6;
+  animation: fadeIn 0.5s ease-in;
+}
+
+.dark-theme #resultsContainer li {
+  background: #4B5563;
+}
+
+#hourlySalaryResultContainer {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+
+#hourlySalaryResultContainer p {
+  font-size: 1.1rem;
+  font-weight: 700;
+}
+
+#chartContainer {
+  position: relative;
+}
+
+.container-quit {
+  text-align: center;
+}
+
+.elapsed-time {
+  font-family: "Josefin Slab", serif;
+  font-size: 1.2rem;
+  font-weight: 700;
+}
+
+.container-energy {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+
+.energy-section {
+  flex: 1;
+  margin: 0.5rem;
+}
+
+.energy-section h3 {
+  font-family: "Josefin Slab", serif;
+  font-size: 1.3rem;
+  margin-bottom: 0.5rem;
+}
+
+.energy-section:first-child h3 {
+  color: var(--success);
+}
+
+.energy-section:last-child h3 {
+  color: var(--danger);
+}
+
+.energy-section li {
+  margin: 0.3rem 0;
+  padding-left: 1.5rem;
+  position: relative;
+}
+
+.energy-section li::before {
+  content: "•";
+  position: absolute;
+  left: 0;
+  color: var(--success);
+}
+
+.energy-section:last-child li::before {
+  color: var(--danger);
+}
+
+footer {
+  max-width: 500px;
+  width: 100%;
+  text-align: center;
+  padding: 1rem;
+}
+
+.copyright {
+  font-size: 0.9rem;
+  color: #6B7280;
+}
+
+@media (max-width: 500px) {
+  main, header, footer {
+    max-width: 100%;
+    padding: 0.5rem;
+  }
+
+  .container {
+    padding: 1rem;
+  }
+
+  .title {
+    font-size: 1.5rem;
+  }
+}
